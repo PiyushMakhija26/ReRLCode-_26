@@ -10,7 +10,8 @@ function App() {
   useEffect(() => {
     // Initialize WebSocket
     const connect = () => {
-      ws.current = new WebSocket('ws://localhost:8000/ws/simulation');
+      const hostname = window.location.hostname || '127.0.0.1';
+      ws.current = new WebSocket(`ws://${hostname}:7777/ws/simulation`);
       
       ws.current.onopen = () => {
         console.log('Connected to Simulation Engine');

@@ -27,7 +27,9 @@ def get_status():
 
 @app.websocket("/ws/simulation")
 async def websocket_simulation(websocket: WebSocket):
+    print("New WebSocket client trying to connect...")
     await websocket.accept()
+    print("Client connected successfully.")
     
     # Initialize simulation
     grid_size = 10
@@ -77,4 +79,4 @@ async def websocket_simulation(websocket: WebSocket):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=7777)
