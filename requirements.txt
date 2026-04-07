@@ -1,0 +1,10 @@
+gymnasium[classic_control, box2d]
+numpy
+stable-baselines3[extra]
+torch
+matplotlib
+pygame
+fastapi
+uvicorn
+python-multipart
+scipy
